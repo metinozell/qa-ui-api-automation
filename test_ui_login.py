@@ -6,7 +6,7 @@ import time
 
 @pytest.fixture
 def setup_and_login():
-    chrome.options=Options()
+    chrome_options=Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1920,1080")
 
