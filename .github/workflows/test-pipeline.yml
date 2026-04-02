@@ -28,3 +28,10 @@ jobs:
 
     - name: Adim 4 - Sihirli Komut (Testleri Calistir)
       run: pytest -v -s
+
+    - name: Adim 5 - Hata Ekran Goruntulerini Kaydet (Artifact)
+      if: failure() # Bu adim SADECE ustteki testler basarisiz olursa calisir
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-hata-goruntuleri
+        path: screenshots/
