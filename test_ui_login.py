@@ -16,6 +16,8 @@ def setup_and_login():
     driver.find_element(By.ID,"password").send_keys("secret_sauce")
     driver.find_element(By.ID,"login-button").click()   
 
+    driver.implicitly_wait(10)
+
     yield driver
     time.sleep(2)
     driver.quit()
