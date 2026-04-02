@@ -1,11 +1,16 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 import time
 
 @pytest.fixture
 def setup_and_login():
-    driver=webdriver.Chrome()
+    chrome.options=Options()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=1920,1080")
+
+    driver=webdriver.Chrome(options=chrome_options)
     driver.get("https://saucedemo.com/")
     driver.find_element(By.ID,"user-name").send_keys("standard_user")
     driver.find_element(By.ID,"password").send_keys("secret_sauce")
